@@ -8,7 +8,6 @@
 
 CircuitPython displayio driver for Pervasive Displays Spectra-based iTC/COG ePaper Displays
 
-
 * Author(s): Andrew Ferguson
 
 Implementation Notes
@@ -16,19 +15,14 @@ Implementation Notes
 
 **Hardware:**
 
-* `Pervasive Displays 1.54" Tri-Color (BRW) Display E2154FS091
-<https://www.digikey.com/en/products/detail/pervasive-displays/E2154FS091/7897287>`_
+* Pervasive Displays 1.54" Tri-Color (BRW) Display E2154FS091
+  https://www.digikey.com/en/products/detail/pervasive-displays/E2154FS091/7897287
 
 **Software and Dependencies:**
 
 * Adafruit CircuitPython firmware for the supported boards:
   https://github.com/adafruit/circuitpython/releases
 
-.. todo:: Uncomment or remove the Bus Device and/or the Register library dependencies
-  based on the library's use of either.
-
-# * Adafruit's Bus Device library: https://github.com/adafruit/Adafruit_CircuitPython_BusDevice
-# * Adafruit's Register library: https://github.com/adafruit/Adafruit_CircuitPython_Register
 """
 
 import displayio
