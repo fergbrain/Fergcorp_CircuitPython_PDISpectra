@@ -90,7 +90,7 @@ Or the following command to update an existing version:
     circup update
 
 Usage Example
-=============x
+=============
 
 .. code-block:: python
 
