@@ -16,7 +16,8 @@ Implementation Notes
 
 **Hardware:**
 
-* `Pervasive Displays 1.54" Tri-Color (BRW) Display E2154FS091 <https://www.digikey.com/en/products/detail/pervasive-displays/E2154FS091/7897287>`_
+* `Pervasive Displays 1.54" Tri-Color (BRW) Display E2154FS091
+<https://www.digikey.com/en/products/detail/pervasive-displays/E2154FS091/7897287>`_
 
 **Software and Dependencies:**
 
