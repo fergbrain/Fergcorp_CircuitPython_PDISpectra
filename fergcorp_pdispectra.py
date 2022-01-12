@@ -45,12 +45,9 @@ _START_SEQUENCE = (
     b"\xE0\x01\x02"  # Active Temperature
     b"\xE0\x02\xCF\x89"  # Panel Settings
     b"\x04\x80\xC8"  # Power on DC/DC and wait 200ms
-
 )
 
-_STOP_SEQUENCE = (
-    b"\x02\x00"  # Turn-off DC/DC
-)
+_STOP_SEQUENCE = b"\x02\x00"  # Turn-off DC/DC
 
 
 # pylint: disable=too-few-public-methods
@@ -109,5 +106,5 @@ class PDISpectra(displayio.EPaperDisplay):
             black_bits_inverted=black_bits_inverted,
             color_bits_inverted=color_bits_inverted,
             refresh_display_command=0x12,
-            always_toggle_chip_select=True
+            always_toggle_chip_select=True,
         )
