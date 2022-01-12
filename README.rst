@@ -94,11 +94,14 @@ Usage Example
 
 .. code-block:: python
 
+    """Simple test script for 1.54" 152x152 tri-color display.
+    """
+
+    import time
     import displayio
     import busio
     import board
     import digitalio
-    import time
     from adafruit_display_text import label
     import terminalio
     from fergcorp_pdispectra import PDISpectra
@@ -121,6 +124,8 @@ Usage Example
     # eInk Driver Setup
     eink_driver_cs = board.GP17
     eink_driver_d_c = board.GP12
+    eink_driver_busy = board.GP11
+    eink_driver_res = board.GP1
 
     display_bus = displayio.FourWire(
         spi_bus,
@@ -130,20 +135,20 @@ Usage Example
         baudrate=100000,
     )
 
-    eink_driver_busy = board.GP11
 
 
-    eink_driver_res = digitalio.DigitalInOut(board.GP1)
-    eink_driver_res.direction = digitalio.Direction.OUTPUT
-    eink_driver_res.drive_mode = digitalio.DriveMode.PUSH_PULL
 
-    eink_driver_res.value = False
+    RES = digitalio.DigitalInOut(eink_driver_res)
+    RES.direction = digitalio.Direction.OUTPUT
+    RES.drive_mode = digitalio.DriveMode.PUSH_PULL
+
+    RES.value = False
     time.sleep(5 / 1000)
-    eink_driver_res.value = True
+    RES.value = True
     time.sleep(5 / 1000)
-    eink_driver_res.value = False
+    RES.value = False
     time.sleep(10 / 1000)
-    eink_driver_res = True
+    RES = True
     time.sleep(5 / 1000)
     print("Reset")
 
@@ -172,8 +177,8 @@ Usage Example
 
     # Draw simple text using the built-in font into a displayio group
     text_group = displayio.Group(scale=2, x=20, y=40)
-    text = "Hello World!"
-    text_area = label.Label(terminalio.FONT, text=text, color=FOREGROUND_COLOR)
+    TEXT = "Hello World!"
+    text_area = label.Label(terminalio.FONT, text=TEXT, color=FOREGROUND_COLOR)
     text_group.append(text_area)  # Add this text to the text group
     g.append(text_group)
 
@@ -189,6 +194,7 @@ Usage Example
 
     while True:
         pass
+
 
 
 Contributing
