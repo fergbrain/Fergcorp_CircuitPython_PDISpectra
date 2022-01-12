@@ -55,9 +55,8 @@ setup(
     ],
     # What does your project relate to?
     keywords="adafruit blinka circuitpython micropython pdispectra PDI spectra itc cog epd "
-             "E2287FS091 E2370FS081 E2417FS051 E2417FS052 E2437FS083 E2581JS081 E2741FS081 "
-             "epaper eink pervasivedisplays E2154FS091 E2213FS091 E2266FS092 E2271FS091",
-
+    "E2287FS091 E2370FS081 E2417FS051 E2417FS052 E2437FS083 E2581JS081 E2741FS081 "
+    "epaper eink pervasivedisplays E2154FS091 E2213FS091 E2266FS092 E2271FS091",
     # You can just specify the packages manually here if your project is
     # simple. Or you can use find_packages().
     # TODO: IF LIBRARY FILES ARE A PACKAGE FOLDER,
