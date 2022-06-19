@@ -66,10 +66,7 @@ class PDISpectra(displayio.EPaperDisplay):
           Invert black bit values
     """
 
-    def __init__(self, bus, swap_rams=False, rotation=0, **kwargs):
-
-        width = kwargs["width"]
-        height = kwargs["height"]
+    def __init__(self, bus, height, width, swap_rams=False, rotation=0, **kwargs):
 
         if rotation % 180 != 0:
             width, height = height, width
@@ -82,18 +79,19 @@ class PDISpectra(displayio.EPaperDisplay):
         else:
             write_black_ram_command = 0x10
             write_color_ram_command = 0x13
-            color_bits_inverted = kwargs.pop("color_bits_inverted", True)
-            black_bits_inverted = kwargs.pop("black_bits_inverted", False)
+            color_bits_inverted = kwargs.pop("color_bits_inverted", False)
+            black_bits_inverted = kwargs.pop("black_bits_inverted", True)
 
         super().__init__(
             display_bus=bus,
             start_sequence=_START_SEQUENCE,
+            **kwargs,
             stop_sequence=_STOP_SEQUENCE,
             width=width,
             height=height,
             ram_width=width,
             ram_height=height,
-            busy_state=True,
+            busy_state=False,
             rotation=rotation,
             write_black_ram_command=write_black_ram_command,
             write_color_ram_command=write_color_ram_command,
@@ -101,4 +99,5 @@ class PDISpectra(displayio.EPaperDisplay):
             color_bits_inverted=color_bits_inverted,
             refresh_display_command=0x12,
             always_toggle_chip_select=True,
+            highlight_color=0xFF0000,
         )
